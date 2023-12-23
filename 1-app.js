@@ -12,7 +12,7 @@ const name ="IJSE"
 /*---------------global object-------------------------------------*/
 // console.log(global)
 global.setTimeout(()=>{
-   // console.log("Timeout...!")
+    // console.log("Timeout...!")
 },5000);
 
 global.setInterval(()=>{
