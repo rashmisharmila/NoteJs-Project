@@ -26,17 +26,18 @@ console.log("--called2..!")
 */
 
 
-/*----------------create and Write file-----------------------------*/
+/*----------------Write file-----------------------------*/
 
 fs.writeFile('doc.txt','Welcome to notejs',()=>{
     console.log("Updated..!")
-})
+});
 
 
 /*------------------create Directory------------------------------------*/
 fs.mkdir('./doc2',(err)=>{
     console.log("Created!!")
-})
+});
+
 
 /*------------------remove Directory------------------------------------*/
 fs.rm('./doc2', {recursive: true, force: true});
@@ -47,8 +48,37 @@ fs.rmSync('./doc2', {recursive: true, force: true},()=>{
     console.log("Remove(Synchronous)")
 });
 
+/*------------------create  file------------------------------------*/
+fs.appendFile('doc3.txt','',(err)=>{
+    if (err){
+        console.log(err)
+    }else{
+        console.log("New File Create")
+    }
+});
+/*------------------create and content file------------------------------------*/
+fs.appendFile('doc3.txt','Welcome',(err)=>{
+    if (err){
+        console.log(err)
+    }else{
+        console.log("New File Create")
+    }
+});
+
+
+/*--------------------check resource availability----------------------------------------------*/
+if (fs.existsSync('doc3.txt')){
+    fs.writeFile('doc3.txt','\nWelcome',(err)=>{
+        if (err){
+            console.log(err)
+        }else{
+            console.log("New File Create")
+        }
+    });
+}
 /*------------------remove file------------------------------------*/
-fs.unlink('/doc2',()=>{
+fs.unlink('doc3',()=>{
     console.log('removed')
-})
+});
+
 
