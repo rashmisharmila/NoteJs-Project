@@ -76,6 +76,7 @@ if (fs.existsSync('doc3.txt')){
         }
     });
 }
+
 /*------------------remove file------------------------------------*/
 fs.unlink('doc3',()=>{
     console.log('removed')
